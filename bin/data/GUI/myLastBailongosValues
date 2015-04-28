@@ -1,0 +1,35 @@
+<Widget>
+    <Kind>2</Kind>
+    <Name>Visible_Bailongos</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>controX</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>controY</Name>
+    <Value>0.576354623</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>controZ1</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>controZ2</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>numObjects</Name>
+    <Value>0.000000000</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>rangeSeparation</Name>
+    <Value>0.000000000</Value>
+</Widget>

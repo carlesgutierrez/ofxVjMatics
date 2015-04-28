@@ -1,0 +1,10 @@
+<Widget>
+    <Kind>2</Kind>
+    <Name>bSoundActive</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>beatDetected</Name>
+    <Value>158.128082275</Value>
+</Widget>
