@@ -14,6 +14,8 @@
 class eventInteraction : public ofEventArgs {
 public:
 	
+	eventInteraction();
+	
 	bool	bGuiMouseInteraction;
 	bool	bInteractionRandomButton;
 	

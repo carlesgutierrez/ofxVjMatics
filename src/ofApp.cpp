@@ -14,9 +14,8 @@ void ofApp::setup(){
 	
 	//Load oll examples
 	myRandomVideosPlayers.setup();
-	myAnimatedBoxes.setup();
 	myParticles.setup();
-	
+	myAnimatedBoxes.setup();
 	
 	guiManager::getInstance()->setup();
 	
@@ -50,20 +49,7 @@ void ofApp::update(){
 	
 	myAnimatedBoxes.update();
 	
-	
-	switch (myModeVisual) {
-		case videosInLineArea:
-			myRandomVideosPlayers.update(modeLocation,0,spaceVideos, false);
-			break;
-		case ribbonsArea:
-			//waiting to edit this mode
-			break;
-		case particlesArea:
-			myParticles.update();
-			break;
-		default:
-			cout << "No myModeVisual right selected" << endl;
-	}
+
 	
 #ifdef USE_PUBLISHSCREEN
 	myPublishScreen.begin();
@@ -79,11 +65,9 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::drawVisuals(){
 	
-	
-	myAnimatedBoxes.draw();
-	
 	if(guiManager::getInstance()->bBailongos)myRandomVideosPlayers.draw();
 	if(guiManager::getInstance()->bParticles)myParticles.draw();
+	myAnimatedBoxes.draw();
 	
 }
 

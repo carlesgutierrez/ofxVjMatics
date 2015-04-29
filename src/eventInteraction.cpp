@@ -9,3 +9,8 @@
 #include "eventInteraction.h"
 
 ofEvent <eventInteraction> eventInteraction::onInteraction;
+
+eventInteraction::eventInteraction(){
+	bGuiMouseInteraction = false;
+	bInteractionRandomButton = false;
+}

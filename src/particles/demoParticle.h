@@ -1,5 +1,6 @@
 #pragma once
 #include "ofMain.h"
+#include "guiManager.h"
 
 enum particleMode{
 	PARTICLE_MODE_ATTRACT = 0,
@@ -18,7 +19,7 @@ class demoParticle{
 		void setAttractPoints( vector <ofVec2f> * attract );
 
 		void reset();
-		void update();
+		void update(ofPoint attractorExtra);
 		void draw();		
 		
 		ofVec2f pos;

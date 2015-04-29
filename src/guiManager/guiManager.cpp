@@ -8,7 +8,7 @@
 
 #include "guiManager.h"
 
-
+#define GUI_CANVAS_WIDTH (50+OFX_UI_GLOBAL_CANVAS_WIDTH/2)
 //----------------------------------------------
 // SINGLETON initalizations
 bool guiManager::instanceFlag = false;
@@ -40,20 +40,28 @@ void guiManager::setup(){
 	createUtilsGUI();
 	createBailongosGUI();
 	createParticlesGUI();
+	createBoxesGUI();
 	
 	//set invisible at first
 	guiBailongos->toggleVisible();
 	guiSound->toggleVisible();
 	guiOSC->toggleVisible();
 	guiParticles->toggleVisible();
+	guiBoxes->toggleVisible();
+	
+	bOnActionGui = false;
+	
+	mouseX = mouseY = 0;
+	bGuiTouched = false;
 	
 }
 
 //--------------------------------------------------------------
 void guiManager::createUtilsGUI(){
 	//In order taking care who ask positions from who
-	createSoundGUI();
 	createOSCGUI();
+	createSoundGUI();
+
 }
 
 
@@ -61,6 +69,19 @@ void guiManager::createUtilsGUI(){
 void guiManager::update(){
 	//OSC GUI interaction... TODO check this
 	oscReceivingUpdate();
+	
+	if(
+		guiParticles->isHit(mouseX, mouseY) ||
+		guiOSC->isHit(mouseX, mouseY)		||
+		guiBailongos->isHit(mouseX, mouseY) ||
+		guiSound->isHit(mouseX, mouseY)		||
+		guiBoxes->isHit(mouseX, mouseY)
+	   )
+	{
+		bGuiTouched = true;
+	}else{
+		bGuiTouched = false;
+	}
 	
 	
 	//TODO auto update the beat to the GUI SOUND
@@ -110,7 +131,7 @@ string guiManager::getPublicIPAddress() {
 //--------------------------------------------------------------
 bool guiManager::createOSCGUI(){
 	posGui = ofVec2f(0, 0);
-	guiOSC = new ofxUICanvas(posGui.x, posGui.y+guiSound->getRect()->getHeight(), OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	guiOSC = new ofxUICanvas(posGui.x, posGui.y, GUI_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiOSC->addLabel("OSC");
 	guiOSC->addButton("loadGUItoPhone", false);
 	guiOSC->addSpacer();
@@ -126,7 +147,7 @@ bool guiManager::createOSCGUI(){
 //--------------------------------------------------------------
 bool guiManager::createSoundGUI(){
 	posGui = ofVec2f(0, 0);
-	guiSound = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	guiSound = new ofxUICanvas(posGui.x, posGui.y+guiOSC->getRect()->getHeight(), GUI_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiSound->addLabel("Sound");
 	guiSound->addToggle("bSoundActive", false);
 	guiSound->addSpacer();
@@ -140,27 +161,48 @@ bool guiManager::createSoundGUI(){
 
 //--------------------------------------------------------------
 bool guiManager::createParticlesGUI(){
-	posGui = ofVec2f(OFX_UI_GLOBAL_CANVAS_WIDTH, 0);
-	guiParticles = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	posGui = ofVec2f(GUI_CANVAS_WIDTH, 0);
+	guiParticles = new ofxUICanvas(posGui.x, posGui.y, GUI_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
 	guiParticles->addLabel("Particles");
 	guiParticles->addToggle("bParticles", false);
 	guiParticles->addSpacer();
 	guiParticles->addSlider("numParticles", 0, 1, 0.0);
-	
+	guiParticles->addSlider("myParticlesYvalue", -1, 1, 0.0);
+
 	guiParticles->autoSizeToFitWidgets();
 	ofAddListener(guiParticles->newGUIEvent,this,&guiManager::guiParticlesEvent);
 	
 	guiParticles->loadSettings("GUI/myLastParticlesValues");
 }
 
-
+//--------------------------------------------------------------
+bool guiManager::createBoxesGUI(){
+	posGui = ofVec2f(GUI_CANVAS_WIDTH*2, 0);
+	guiBoxes = new ofxUICanvas(posGui.x, posGui.y, GUI_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	guiBoxes->addLabel("Boxes");
+	guiBoxes->addToggle("bBoxes", false);
+	guiBoxes->addSlider("numBoxes", 0, 10, 0.0);
+	guiBoxes->addToggle("bAnimatedBoxes", false);
+	guiBoxes->addSlider("controlXBoxes", -1, 1, 0.0);
+	guiBoxes->addSlider("controlYBoxes", -1, 1, 0.0);
+	guiBoxes->addSlider("controlZBoxes", -1, 1, 0.0);
+	guiBoxes->addSpacer();
+	guiBoxes->addToggle("bWireBoxes", false);
+	guiBoxes->addSlider("colorHBoxes", 0, 255, 0.0);
+	guiBoxes->addSlider("colorSBoxes", 0, 255, 200.0);
+	guiBoxes->addSlider("colorVBoxes", 0, 255, 200.0);
+	guiBoxes->autoSizeToFitWidgets();
+	ofAddListener(guiBoxes->newGUIEvent,this,&guiManager::guiBoxesEvent);
+	
+	guiBoxes->loadSettings("GUI/myLastBoxesValues");
+}
 
 //--------------------------------------------------------------
 bool guiManager::createBailongosGUI(){
 	
 	cout << "Going to create a new Gui" << endl;
-	posGui = ofVec2f(ofGetWidth()-OFX_UI_GLOBAL_CANVAS_WIDTH, 0);
-	guiBailongos = new ofxUICanvas(posGui.x, posGui.y, OFX_UI_GLOBAL_CANVAS_WIDTH, OFX_UI_GLOBAL_CANVAS_WIDTH);
+	posGui = ofVec2f(GUI_CANVAS_WIDTH*3, 0);
+	guiBailongos = new ofxUICanvas(posGui.x, posGui.y, GUI_CANVAS_WIDTH, GUI_CANVAS_WIDTH);
 
 	guiBailongos->addLabel("Bailongos");
 	guiBailongos->addToggle("Visible_Bailongos", false);
@@ -206,6 +248,8 @@ void guiManager::keyReleased(ofKeyEventArgs &args){
 			guiBailongos->toggleVisible();
 			guiSound->toggleVisible();
 			guiOSC->toggleVisible();
+			guiBoxes->toggleVisible();
+
 			//if(guiBailongos->isVisible()) ofShowCursor();
 			///else ofHideCursor();
 			
@@ -216,7 +260,8 @@ void guiManager::keyReleased(ofKeyEventArgs &args){
 			guiSound->saveSettings("GUI/myLastSoundValues");
 			guiOSC->saveSettings("GUI/myLastOSCValues");
 			guiParticles->saveSettings("GUI/myLastParticlesValues");
-			cout << "saving scenario to Xml" << endl;
+			guiBoxes->saveSettings("GUI/myLastBoxesValues");
+			cout << "saving all gui params to different Xml" << endl;
 			break;
     }
 	
@@ -256,23 +301,27 @@ string guiManager::getIpToLoadGui(){
 //--------------------------------------------------------
 void guiManager::mouseDragged(ofMouseEventArgs &args){
 
-	//guiBailongos->getNam args.x
+	mouseX = args.x;
+	mouseY = args.y;
+	
 }
 
 //--------------------------------------------------------
 void guiManager::mouseMoved(ofMouseEventArgs &args){
-    
+	mouseX = args.x;
+	mouseY = args.y;
 }
 
 //--------------------------------------------------------
 void guiManager::mousePressed(ofMouseEventArgs &args){
 
-	if(guiParticles->isHit(args.x, args.y) == false){
-		///deactivate particles mouse events // TODO check others if they use mouse events
-		eventInteraction newInteractionEvent;
-		newInteractionEvent.bGuiMouseInteraction = true;
-		ofNotifyEvent(eventInteraction::onInteraction, newInteractionEvent);
-	}
+	mouseX = args.x;
+	mouseY = args.y;
+	
+	//eventInteraction newInteractionEvent;
+	//newInteractionEvent.bGuiMouseInteraction = true;
+	//ofNotifyEvent(eventInteraction::onInteraction, newInteractionEvent);
+
 
 }
 
@@ -280,9 +329,9 @@ void guiManager::mousePressed(ofMouseEventArgs &args){
 void guiManager::mouseReleased(ofMouseEventArgs &args){
 
 	
-	eventInteraction newInteractionEvent;
-	newInteractionEvent.bGuiMouseInteraction = false;
-	ofNotifyEvent(eventInteraction::onInteraction, newInteractionEvent);
+	//eventInteraction newInteractionEvent;
+	//newInteractionEvent.bGuiMouseInteraction = false;
+	//ofNotifyEvent(eventInteraction::onInteraction, newInteractionEvent);
 
 }
 
@@ -298,7 +347,71 @@ void guiManager::guiOSCEvent(ofxUIEventArgs &e){
 */
 }
 
-
+//--------------------------------------------------------
+void guiManager::guiBoxesEvent(ofxUIEventArgs &e){
+	
+	if(e.getName() == "bBoxes")
+	{
+		ofxUIToggle *toggle = e.getToggle();
+		bBoxes = toggle->getValue();
+		cout << "bBoxes = " << bBoxes << endl;
+	}
+	else if(e.getName() == "bAnimatedBoxes")
+	{
+		ofxUIToggle *toggle = e.getToggle();
+		bAnimatedBoxes = toggle->getValue();
+		cout << "bAnimatedBoxes = " << bAnimatedBoxes << endl;
+	}
+	else if(e.getName() == "bWireBoxes")
+	{
+		ofxUIToggle *toggle = e.getToggle();
+		bWireBoxes = toggle->getValue();
+		cout << "bWireBoxes = " << bWireBoxes << endl;
+	}
+	else if(e.getName() == "numBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		numBoxes = slider->getScaledValue();
+		cout << "numBoxes = " << numBoxes << endl;
+	}
+	else if(e.getName() == "colorHBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		colorHBoxes = slider->getScaledValue();
+		cout << "colorHBoxes = " << colorHBoxes << endl;
+	}
+	else if(e.getName() == "colorSBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		colorSBoxes = slider->getScaledValue();
+		cout << "colorSBoxes = " << colorSBoxes << endl;
+	}
+	else if(e.getName() == "colorVBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		colorVBoxes = slider->getScaledValue();
+		cout << "colorVBoxes = " << colorVBoxes << endl;
+	}
+	else if(e.getName() == "controlXBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		controlXBoxes = slider->getScaledValue();
+		cout << "controlXBoxes = " << controlXBoxes << endl;
+	}
+	else if(e.getName() == "controlYBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		controlYBoxes = slider->getScaledValue();
+		cout << "controlYBoxes = " << controlYBoxes << endl;
+	}
+	else if(e.getName() == "controlZBoxes")
+	{
+		ofxUISlider *slider = e.getSlider();
+		controlZBoxes = slider->getScaledValue();
+		cout << "controlZBoxes = " << controlZBoxes << endl;
+	}
+	
+}
 
 //--------------------------------------------------------
 void guiManager::guiParticlesEvent(ofxUIEventArgs &e){
@@ -315,6 +428,13 @@ void guiManager::guiParticlesEvent(ofxUIEventArgs &e){
 		numParticles = slider->getScaledValue();
 		cout << "numParticles = " << numParticles << endl;
 	}
+	else if(e.getName() == "myParticlesYvalue")
+	{
+		ofxUISlider *slider = e.getSlider();
+		myParticlesYvalue = slider->getScaledValue();
+		cout << "myParticlesYvalue = " << myParticlesYvalue << endl;
+	}
+	
 	
 }
 

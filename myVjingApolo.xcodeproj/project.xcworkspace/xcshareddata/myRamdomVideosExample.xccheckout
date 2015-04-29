@@ -6,6 +6,8 @@
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7FD661CE-C2FE-4A9D-B7C2-4E7F661872EF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>myRamdomVideosExample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2F210AAA7F2F62519159C75080507D92C1F929CB</key>
@@ -22,6 +24,8 @@
 		<string>https://github.com/rezaali/ofxBeatDetector.git</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
 		<string>https://github.com/rezaali/ofxUI.git</string>
+		<key>862D905308FC99C1E69FD21FEF60517EAB6665D8</key>
+		<string>https://github.com/carlesgutierrez/ofxVjMatics.git</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
 		<string>https://github.com/neilmendoza/ofxPostProcessing.git</string>
 		<key>BFCEBA68FA34CC9D42430E49FB09A6EA416EC05F</key>
@@ -35,41 +39,45 @@
 		<key>F4CCB893AFADB97238A965FD2F28717F1CAAE613</key>
 		<string>https://github.com/astellato/ofxSyphon.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>myRamdomVideosExample.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2F210AAA7F2F62519159C75080507D92C1F929CB</key>
-		<string>ofxMtlMapping2D/</string>
+		<string>../../../addons/ofxMtlMapping2D</string>
 		<key>328B2D9D97956D43F1C477558678A6865720047A</key>
-		<string>ofxMSAInteractiveObject/</string>
+		<string>../../../addons/ofxMSAInteractiveObject</string>
 		<key>447998D83939BB7F25EB9B445BB8EECEBBAD7456</key>
-		<string>ofxZmq/</string>
+		<string>../../../addons/ofxZmq</string>
 		<key>580F20DBA399583A023E65CDA3528CEC4C8A8DAE</key>
-		<string>ofxControlOSC/</string>
+		<string>../../../addons/ofxControlOSC</string>
 		<key>5DB7C332A3A89035E93556A2A38BF414005BA671</key>
-		<string>ofxJSON/</string>
+		<string>../../../addons/ofxJSON</string>
 		<key>5EA337860EDF9EDE1ED391597512CC8689AE0D46</key>
-		<string>ofxBeatDetector/</string>
+		<string>../../../addons/ofxBeatDetector</string>
 		<key>7E804D925461714118DB355C65BC964B41D94376</key>
-		<string>ofxUI/</string>
+		<string>../../../addons/ofxUI</string>
+		<key>862D905308FC99C1E69FD21FEF60517EAB6665D8</key>
+		<string>../..</string>
 		<key>95F70890EFD46183734FEDFE52CF53391DE6937E</key>
-		<string>ofxPostProcessing/</string>
+		<string>../../../addons/ofxPostProcessing</string>
 		<key>BFCEBA68FA34CC9D42430E49FB09A6EA416EC05F</key>
-		<string>ofxHapPlayer/</string>
+		<string>../../../addons/ofxHapPlayer</string>
 		<key>D567426DFA35BE989FA6213B9FF0010E0B18F67D</key>
-		<string>ofxPublishScreen/</string>
+		<string>../../../addons/ofxPublishScreen</string>
 		<key>E5D2BF07F1BD4888430F12ADB292E9A68C0BFC76</key>
-		<string>ofxTurboJpeg/</string>
+		<string>../../../addons/ofxTurboJpeg</string>
 		<key>E7CF2A0D20F36DFDC99BDD1EEAB158B4D87C4793</key>
-		<string>ofxRandomVideosPlayer/</string>
+		<string>../../../addons/ofxRandomVideosPlayer</string>
 		<key>F4CCB893AFADB97238A965FD2F28717F1CAAE613</key>
-		<string>ofxSyphon/</string>
+		<string>../../../addons/ofxSyphon</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/neilmendoza/ofxPostProcessing.git</string>
+	<string>https://github.com/carlesgutierrez/ofxVjMatics.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>95F70890EFD46183734FEDFE52CF53391DE6937E</string>
+	<string>862D905308FC99C1E69FD21FEF60517EAB6665D8</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -167,6 +175,14 @@
 			<string>7E804D925461714118DB355C65BC964B41D94376</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxUI</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>862D905308FC99C1E69FD21FEF60517EAB6665D8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxVjMatics</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

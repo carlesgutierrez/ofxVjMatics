@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-
+#include "guiManager.h"
 
 class animatedBox{
 
@@ -9,7 +9,7 @@ class animatedBox{
 		animatedBox(float w);
 		~animatedBox();
 	
-		void update();
+		void update(ofVec2f aux);
 		void draw();		
 		
 		ofVec3f pos= ofVec3f(0,0,0);

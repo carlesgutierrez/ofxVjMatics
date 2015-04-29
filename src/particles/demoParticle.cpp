@@ -5,8 +5,7 @@ demoParticle::demoParticle(){
 	
 	attractPoints = NULL;
 	
-	random_one_neu = ofRandom(ofGetWidth());
-	random_two_neu = ofRandom(ofGetHeight());
+
 }
 
 //------------------------------------------------------------------
@@ -52,7 +51,7 @@ void demoParticle::reset(){
 }
 
 //------------------------------------------------------------------
-void demoParticle::update(){
+void demoParticle::update(ofPoint extraAttractor){
 
 	//1 - APPLY THE FORCES BASED ON WHICH MODE WE ARE IN 
 	
@@ -67,27 +66,8 @@ void demoParticle::update(){
 		 
 		 */
 		
-		//Forum Try
-		int frame_num = ofGetFrameNum();
-		int elapsedTime = ofGetElapsedTimef();
-		
-		random_one_neu = random_one;
-		random_two_neu = random_two;
-		
-		if(elapsedTime == 5){
-			random_one_neu = ofRandom(ofGetWidth());
-			random_two_neu = ofRandom(ofGetHeight());
-			ofPoint attractPt(random_one_neu, random_two_neu);
-			
-			cout << "random_one_neu = " << random_one_neu << " random_two_neu = " << random_two_neu << endl;
-			ofResetElapsedTimeCounter();
-			
-		} else{
-			random_one_neu = random_one;
-			random_two_neu = random_two;
-			ofPoint attractPt(random_one_neu, random_two_neu);
-		}
-		ofPoint attractPt(random_one_neu, random_two_neu);
+
+		ofPoint attractPt = extraAttractor;
 		frc = attractPt-pos; // we get the attraction force/vector by looking at the mouse pos relative to our pos
 		frc.normalize(); //by normalizing we disregard how close the particle is to the attraction point
 		

@@ -67,6 +67,9 @@ public:
 	
 	bool createParticlesGUI();
 	ofxUICanvas *guiParticles;
+
+	bool createBoxesGUI();
+	ofxUICanvas *guiBoxes;
 	
 	bool createOSCGUI();
 	ofxUICanvas *guiOSC;
@@ -74,10 +77,12 @@ public:
 	
 	ofVec2f posGui;
 	
+	void guiBoxesEvent(ofxUIEventArgs &e);
 	void guiParticlesEvent(ofxUIEventArgs &e);
 	void guiBailongosEvent(ofxUIEventArgs &e);
 	void guiSoundEvent(ofxUIEventArgs &e);
 	void guiOSCEvent(ofxUIEventArgs &e); // TODO this is not allowing to use Text Intup? raro raro
+	bool bOnActionGui;
 	
 	ofColor backgroundColor;
 	
@@ -92,4 +97,15 @@ public:
 	//control particles
 	bool bParticles;
 	float numParticles;
+	float myParticlesYvalue;
+	
+	//control Boxes
+	bool bBoxes, bWireBoxes, bAnimatedBoxes;
+	int numBoxes;
+	int colorHBoxes, colorSBoxes, colorVBoxes;
+	float controlXBoxes, controlYBoxes, controlZBoxes;
+	
+	//Control GUI
+	bool bGuiTouched;
+	int mouseX, mouseY;
 };

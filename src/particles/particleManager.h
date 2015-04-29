@@ -12,6 +12,7 @@ class particleManager{
 		void update();
 		void draw();
 		void resetParticles();
+	ofPoint getRandomAttractorParticles();
 
 	//ofApp events
 	void keyReleased(ofKeyEventArgs &args);
@@ -21,7 +22,7 @@ class particleManager{
 	void mousePressed(ofMouseEventArgs &args);
 	void mouseReleased(ofMouseEventArgs &args);
 	
-	void listenerMovingGUI(eventInteraction & args);
+	//void listenerMovingGUI(eventInteraction & args);
 	bool bmouseDisabled;
 	
 		particleMode currentMode;
@@ -35,5 +36,12 @@ class particleManager{
 		int numAttractPoints = 1;
 		int particlesX = ofGetWidth()-ofGetWidth()*0.35;
 		int particlesY = ofGetHeight()-ofGetHeight()*0.35;
+	
+	// Extra forum try: http://forum.openframeworks.cc/t/automatically-moving-particles/19273/1
+	
+	int random_one_neu;
+	int random_one;
+	int random_two_neu;
+	int random_two;
 	
 };

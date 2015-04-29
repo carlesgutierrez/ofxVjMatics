@@ -27,7 +27,7 @@ void particleManager::setup(){
 	ofRegisterKeyEvents(this);
 	
 	//Interaction events // in this case from Gui event
-	ofAddListener(eventInteraction::onInteraction ,this, &particleManager::listenerMovingGUI);
+	//ofAddListener(eventInteraction::onInteraction ,this, &particleManager::listenerMovingGUI);
 	
 	bmouseDisabled = false;
 	
@@ -49,23 +49,63 @@ void particleManager::resetParticles(){
 		p[i].setMode(currentMode);		
 		p[i].setAttractPoints(&attractPointsWithMovement);;
 		p[i].reset();
-		
-		cout << "Reser p(" << i << ")" << endl;
-	}	
+	}
+	
+	//Forum extra movement
+	random_one_neu = ofRandom(ofGetWidth());
+	random_two_neu = ofRandom(ofGetHeight());
+	random_one = random_one_neu;
+	random_two = random_two_neu;
 }
 
 //--------------------------------------------------------------
 void particleManager::update(){
+	
+	//Random attractor order for particles
+	ofPoint neuAttractor = getRandomAttractorParticles();
+	
+	
 	for(unsigned int i = 0; i < p.size(); i++){
 		p[i].setMode(currentMode);
-		p[i].update();
+		p[i].update(neuAttractor);
 	}
 	
 	//lets add a bit of movement to the attract points
 	for(unsigned int i = 0; i < attractPointsWithMovement.size(); i++){
 		attractPointsWithMovement[i].x = attractPoints[i].x + ofSignedNoise(i * 10, ofGetElapsedTimef() * 0.7) * 12.0;
 		attractPointsWithMovement[i].y = attractPoints[i].y + ofSignedNoise(i * -10, ofGetElapsedTimef() * 0.7) * 12.0;
-	}	
+	}
+	
+
+}
+
+//--------------------------------------------------------------
+ofPoint particleManager::getRandomAttractorParticles(){
+	
+	//Forum Try
+	int frame_num = ofGetFrameNum();
+	int elapsedTime = ofGetElapsedTimef();
+	
+	
+	if(elapsedTime == 5){
+		
+		random_one_neu = (int)ofRandom(ofGetWidth());
+		random_two_neu = guiManager::getInstance()->myParticlesYvalue*ofGetHeight();
+		
+		//cout << "elapsedTime= " << elapsedTime << " random_one_neu = " << random_one_neu << " random_two_neu = " << random_two_neu << endl;
+		ofResetElapsedTimeCounter();
+		
+		random_one = random_one_neu;
+		random_two = random_two_neu;
+		
+	} else{
+		random_one_neu = random_one;
+		random_two_neu = random_two;
+		//ofPoint attractPt(random_one_neu, random_two_neu);
+		//cout << "elapsedTime= " << elapsedTime << " random_one_neu = " << random_one_neu << " random_two_neu = " << random_two_neu << endl;
+	}
+	
+	return ofPoint(random_one_neu, random_two_neu);
 }
 
 //--------------------------------------------------------------
@@ -80,7 +120,8 @@ void particleManager::draw(){
 			ofSetColor(ofColor::red);
 		}
 		else if(i < numParticlesDIV3*2){
-			ofSetColor(ofColor::forestGreen);
+			//ofSetColor(ofColor::forestGreen);
+			ofSetColor(ofColor::darkBlue);
 		}else{
 			ofSetColor(ofColor::yellow);
 		}
@@ -101,14 +142,11 @@ void particleManager::draw(){
 		}
 	}
 
-	if(guiManager::getInstance()->guiBailongos->isVisible()){
-		ofSetColor(230);
-		ofDrawBitmapString(currentModeStr + "\n\nSpacebar to reset. \nKeys 1-4 to change mode.", 10, 20);
-	}
 }
 
 //--------------------------------------------------------------
 void particleManager::keyPressed(ofKeyEventArgs &args){
+	
 	if( args.key == '1'){
 		currentMode = PARTICLE_MODE_ATTRACT;
 		currentModeStr = "1 - PARTICLE_MODE_ATTRACT: attracts to mouse"; 		
@@ -146,14 +184,13 @@ void particleManager::mouseMoved(ofMouseEventArgs &args){
 //--------------------------------------------------------------
 void particleManager::mouseDragged(ofMouseEventArgs &args){
 
-	if(bmouseDisabled){
+	//if(bmouseDisabled){
+	if(!(guiManager::getInstance()->bGuiTouched)){
 		for(int i = 0; i < attractPoints.size(); i++){
 			attractPoints[i].x = args.x;
 			attractPoints[i].y = args.y;
 		}
 	}
-	
-	cout << bmouseDisabled << endl;
 }
 
 //--------------------------------------------------------------
@@ -168,6 +205,7 @@ void particleManager::mouseReleased(ofMouseEventArgs &args){
 	}
 }
 
+/*
 
 //------------------------------
 //Activat / Deactivate Camera mouse events
@@ -182,3 +220,4 @@ void particleManager::listenerMovingGUI(eventInteraction & args){
 		cout << "set bmouseDisabled false = " << bmouseDisabled<< endl;
 	}
 }
+*/

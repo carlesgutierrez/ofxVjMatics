@@ -201,6 +201,19 @@
 		84D6A85A1AC2C8170028BA50 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D6A84B1AC2C8170028BA50 /* OscPrintReceivedElements.cpp */; };
 		84D6A85B1AC2C8170028BA50 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D6A84D1AC2C8170028BA50 /* OscReceivedElements.cpp */; };
 		84D6A85C1AC2C8170028BA50 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D6A84F1AC2C8170028BA50 /* OscTypes.cpp */; };
+		84DE61501AF0EA59001D22BB /* ofxEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61361AF0EA59001D22BB /* ofxEasing.cpp */; };
+		84DE61511AF0EA59001D22BB /* ofxEasingBack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61381AF0EA59001D22BB /* ofxEasingBack.cpp */; };
+		84DE61521AF0EA59001D22BB /* ofxEasingBounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE613A1AF0EA59001D22BB /* ofxEasingBounce.cpp */; };
+		84DE61531AF0EA59001D22BB /* ofxEasingCirc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE613C1AF0EA59001D22BB /* ofxEasingCirc.cpp */; };
+		84DE61541AF0EA59001D22BB /* ofxEasingCubic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE613E1AF0EA59001D22BB /* ofxEasingCubic.cpp */; };
+		84DE61551AF0EA59001D22BB /* ofxEasingElastic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61401AF0EA59001D22BB /* ofxEasingElastic.cpp */; };
+		84DE61561AF0EA59001D22BB /* ofxEasingExpo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61421AF0EA59001D22BB /* ofxEasingExpo.cpp */; };
+		84DE61571AF0EA59001D22BB /* ofxEasingLinear.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61441AF0EA59001D22BB /* ofxEasingLinear.cpp */; };
+		84DE61581AF0EA59001D22BB /* ofxEasingQuad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61461AF0EA59001D22BB /* ofxEasingQuad.cpp */; };
+		84DE61591AF0EA59001D22BB /* ofxEasingQuart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE61481AF0EA59001D22BB /* ofxEasingQuart.cpp */; };
+		84DE615A1AF0EA59001D22BB /* ofxEasingQuint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE614A1AF0EA59001D22BB /* ofxEasingQuint.cpp */; };
+		84DE615B1AF0EA59001D22BB /* ofxEasingSine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE614C1AF0EA59001D22BB /* ofxEasingSine.cpp */; };
+		84DE615C1AF0EA59001D22BB /* ofxTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84DE614E1AF0EA59001D22BB /* ofxTween.cpp */; };
 		84F6A3601AEA4D7E00DAD28D /* animatedBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F6A35C1AEA4D7E00DAD28D /* animatedBox.cpp */; };
 		84F6A3611AEA4D7E00DAD28D /* animatedBoxManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84F6A35E1AEA4D7E00DAD28D /* animatedBoxManager.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -698,6 +711,33 @@
 		84D6A84E1AC2C8170028BA50 /* OscReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		84D6A84F1AC2C8170028BA50 /* OscTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
 		84D6A8501AC2C8170028BA50 /* OscTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		84DE61351AF0EA59001D22BB /* easing_terms_of_use.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = easing_terms_of_use.html; sourceTree = "<group>"; };
+		84DE61361AF0EA59001D22BB /* ofxEasing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasing.cpp; sourceTree = "<group>"; };
+		84DE61371AF0EA59001D22BB /* ofxEasing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasing.h; sourceTree = "<group>"; };
+		84DE61381AF0EA59001D22BB /* ofxEasingBack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingBack.cpp; sourceTree = "<group>"; };
+		84DE61391AF0EA59001D22BB /* ofxEasingBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingBack.h; sourceTree = "<group>"; };
+		84DE613A1AF0EA59001D22BB /* ofxEasingBounce.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingBounce.cpp; sourceTree = "<group>"; };
+		84DE613B1AF0EA59001D22BB /* ofxEasingBounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingBounce.h; sourceTree = "<group>"; };
+		84DE613C1AF0EA59001D22BB /* ofxEasingCirc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingCirc.cpp; sourceTree = "<group>"; };
+		84DE613D1AF0EA59001D22BB /* ofxEasingCirc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingCirc.h; sourceTree = "<group>"; };
+		84DE613E1AF0EA59001D22BB /* ofxEasingCubic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingCubic.cpp; sourceTree = "<group>"; };
+		84DE613F1AF0EA59001D22BB /* ofxEasingCubic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingCubic.h; sourceTree = "<group>"; };
+		84DE61401AF0EA59001D22BB /* ofxEasingElastic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingElastic.cpp; sourceTree = "<group>"; };
+		84DE61411AF0EA59001D22BB /* ofxEasingElastic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingElastic.h; sourceTree = "<group>"; };
+		84DE61421AF0EA59001D22BB /* ofxEasingExpo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingExpo.cpp; sourceTree = "<group>"; };
+		84DE61431AF0EA59001D22BB /* ofxEasingExpo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingExpo.h; sourceTree = "<group>"; };
+		84DE61441AF0EA59001D22BB /* ofxEasingLinear.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingLinear.cpp; sourceTree = "<group>"; };
+		84DE61451AF0EA59001D22BB /* ofxEasingLinear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingLinear.h; sourceTree = "<group>"; };
+		84DE61461AF0EA59001D22BB /* ofxEasingQuad.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingQuad.cpp; sourceTree = "<group>"; };
+		84DE61471AF0EA59001D22BB /* ofxEasingQuad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingQuad.h; sourceTree = "<group>"; };
+		84DE61481AF0EA59001D22BB /* ofxEasingQuart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingQuart.cpp; sourceTree = "<group>"; };
+		84DE61491AF0EA59001D22BB /* ofxEasingQuart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingQuart.h; sourceTree = "<group>"; };
+		84DE614A1AF0EA59001D22BB /* ofxEasingQuint.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingQuint.cpp; sourceTree = "<group>"; };
+		84DE614B1AF0EA59001D22BB /* ofxEasingQuint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingQuint.h; sourceTree = "<group>"; };
+		84DE614C1AF0EA59001D22BB /* ofxEasingSine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasingSine.cpp; sourceTree = "<group>"; };
+		84DE614D1AF0EA59001D22BB /* ofxEasingSine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingSine.h; sourceTree = "<group>"; };
+		84DE614E1AF0EA59001D22BB /* ofxTween.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTween.cpp; sourceTree = "<group>"; };
+		84DE614F1AF0EA59001D22BB /* ofxTween.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTween.h; sourceTree = "<group>"; };
 		84F6A35C1AEA4D7E00DAD28D /* animatedBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = animatedBox.cpp; sourceTree = "<group>"; };
 		84F6A35D1AEA4D7E00DAD28D /* animatedBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animatedBox.h; sourceTree = "<group>"; };
 		84F6A35E1AEA4D7E00DAD28D /* animatedBoxManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = animatedBoxManager.cpp; sourceTree = "<group>"; };
@@ -1735,6 +1775,57 @@
 			path = osc;
 			sourceTree = "<group>";
 		};
+		84DE61321AF0EA59001D22BB /* ofxTween */ = {
+			isa = PBXGroup;
+			children = (
+				84DE61331AF0EA59001D22BB /* src */,
+			);
+			name = ofxTween;
+			sourceTree = "<group>";
+		};
+		84DE61331AF0EA59001D22BB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				84DE61341AF0EA59001D22BB /* Easings */,
+				84DE614E1AF0EA59001D22BB /* ofxTween.cpp */,
+				84DE614F1AF0EA59001D22BB /* ofxTween.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxTween/src;
+			sourceTree = "<group>";
+		};
+		84DE61341AF0EA59001D22BB /* Easings */ = {
+			isa = PBXGroup;
+			children = (
+				84DE61351AF0EA59001D22BB /* easing_terms_of_use.html */,
+				84DE61361AF0EA59001D22BB /* ofxEasing.cpp */,
+				84DE61371AF0EA59001D22BB /* ofxEasing.h */,
+				84DE61381AF0EA59001D22BB /* ofxEasingBack.cpp */,
+				84DE61391AF0EA59001D22BB /* ofxEasingBack.h */,
+				84DE613A1AF0EA59001D22BB /* ofxEasingBounce.cpp */,
+				84DE613B1AF0EA59001D22BB /* ofxEasingBounce.h */,
+				84DE613C1AF0EA59001D22BB /* ofxEasingCirc.cpp */,
+				84DE613D1AF0EA59001D22BB /* ofxEasingCirc.h */,
+				84DE613E1AF0EA59001D22BB /* ofxEasingCubic.cpp */,
+				84DE613F1AF0EA59001D22BB /* ofxEasingCubic.h */,
+				84DE61401AF0EA59001D22BB /* ofxEasingElastic.cpp */,
+				84DE61411AF0EA59001D22BB /* ofxEasingElastic.h */,
+				84DE61421AF0EA59001D22BB /* ofxEasingExpo.cpp */,
+				84DE61431AF0EA59001D22BB /* ofxEasingExpo.h */,
+				84DE61441AF0EA59001D22BB /* ofxEasingLinear.cpp */,
+				84DE61451AF0EA59001D22BB /* ofxEasingLinear.h */,
+				84DE61461AF0EA59001D22BB /* ofxEasingQuad.cpp */,
+				84DE61471AF0EA59001D22BB /* ofxEasingQuad.h */,
+				84DE61481AF0EA59001D22BB /* ofxEasingQuart.cpp */,
+				84DE61491AF0EA59001D22BB /* ofxEasingQuart.h */,
+				84DE614A1AF0EA59001D22BB /* ofxEasingQuint.cpp */,
+				84DE614B1AF0EA59001D22BB /* ofxEasingQuint.h */,
+				84DE614C1AF0EA59001D22BB /* ofxEasingSine.cpp */,
+				84DE614D1AF0EA59001D22BB /* ofxEasingSine.h */,
+			);
+			path = Easings;
+			sourceTree = "<group>";
+		};
 		84F6A35B1AEA4D7E00DAD28D /* boxes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1764,6 +1855,7 @@
 				841BF52E1ADBDF2B0074BB35 /* ofxZmq */,
 				841BF63C1ADBDF350074BB35 /* ofxPublishScreen */,
 				84697E381ADEAC350090CCD8 /* ofxBeatDetector */,
+				84DE61321AF0EA59001D22BB /* ofxTween */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -1883,7 +1975,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "myRamdomVideosExample" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "myVjingApolo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1945,13 +2037,17 @@
 				841BF6361ADBDF2B0074BB35 /* v2_decoder.cpp in Sources */,
 				8456AAC71AB9DD11005BD2D3 /* ofxUINumberDialer.cpp in Sources */,
 				841BF60B1ADBDF2B0074BB35 /* Makefile in Sources */,
+				84DE61591AF0EA59001D22BB /* ofxEasingQuart.cpp in Sources */,
+				84DE615A1AF0EA59001D22BB /* ofxEasingQuint.cpp in Sources */,
 				841BF6181ADBDF2B0074BB35 /* plain_mechanism.cpp in Sources */,
 				841BF6271ADBDF2B0074BB35 /* select.cpp in Sources */,
 				84697E3C1ADEAC350090CCD8 /* ofxBeatDetector.cpp in Sources */,
+				84DE61561AF0EA59001D22BB /* ofxEasingExpo.cpp in Sources */,
 				842852711AC2EDDD004B4E5F /* jsoncpp.cpp in Sources */,
 				841BF5F31ADBDF2B0074BB35 /* ofxZmqReply.cpp in Sources */,
 				84D6A7B71AC2C4100028BA50 /* ofxControlOSC.cpp in Sources */,
 				841BF6321ADBDF2B0074BB35 /* thread.cpp in Sources */,
+				84DE61581AF0EA59001D22BB /* ofxEasingQuad.cpp in Sources */,
 				841BF5FA1ADBDF2B0074BB35 /* curve_client.cpp in Sources */,
 				8456AACB1AB9DD11005BD2D3 /* ofxUIRotarySlider.cpp in Sources */,
 				8456AAD11AB9DD11005BD2D3 /* ofxUISuperCanvas.cpp in Sources */,
@@ -1965,6 +2061,7 @@
 				8456AAC41AB9DD11005BD2D3 /* ofxUIMovingGraph.cpp in Sources */,
 				8456AAB71AB9DD11005BD2D3 /* ofxUIDropDownList.cpp in Sources */,
 				8456AAB51AB9DD11005BD2D3 /* ofxUICircleSlider.cpp in Sources */,
+				84DE61571AF0EA59001D22BB /* ofxEasingLinear.cpp in Sources */,
 				841BF5FC1ADBDF2B0074BB35 /* dealer.cpp in Sources */,
 				8456AAB91AB9DD11005BD2D3 /* ofxUIFPS.cpp in Sources */,
 				843121D11AD5835C0062BB5F /* ofxHapPlayer.cpp in Sources */,
@@ -1986,6 +2083,7 @@
 				8456AACA1AB9DD11005BD2D3 /* ofxUIRectangle.cpp in Sources */,
 				8456AAB01AB9DD11005BD2D3 /* ofxUI2DPad.cpp in Sources */,
 				8456A9F91AB9D988005BD2D3 /* ConvolutionPass.cpp in Sources */,
+				84DE61551AF0EA59001D22BB /* ofxEasingElastic.cpp in Sources */,
 				8456AAC91AB9DD11005BD2D3 /* ofxUIRangeSlider.cpp in Sources */,
 				8456AABD1AB9DD11005BD2D3 /* ofxUIImageSampler.cpp in Sources */,
 				84D6A8541AC2C8170028BA50 /* ofxOscReceiver.cpp in Sources */,
@@ -1993,7 +2091,9 @@
 				84D6A8531AC2C8170028BA50 /* ofxOscParameterSync.cpp in Sources */,
 				8456AAD41AB9DD11005BD2D3 /* ofxUITextInput.cpp in Sources */,
 				8456AABC1AB9DD11005BD2D3 /* ofxUIImageButton.cpp in Sources */,
+				84DE61541AF0EA59001D22BB /* ofxEasingCubic.cpp in Sources */,
 				841BF5F21ADBDF2B0074BB35 /* ofxZmqPublisher.cpp in Sources */,
+				84DE615C1AF0EA59001D22BB /* ofxTween.cpp in Sources */,
 				841BF5F51ADBDF2B0074BB35 /* ofxZmqSocket.cpp in Sources */,
 				841BF61B1ADBDF2B0074BB35 /* precompiled.cpp in Sources */,
 				8456A9FE1AB9D988005BD2D3 /* FxaaPass.cpp in Sources */,
@@ -2006,6 +2106,7 @@
 				8456AAAF1AB9DD11005BD2D3 /* ofxUI2DGraph.cpp in Sources */,
 				841BF61C1ADBDF2B0074BB35 /* proxy.cpp in Sources */,
 				8456AA071AB9D988005BD2D3 /* RenderPass.cpp in Sources */,
+				84DE61501AF0EA59001D22BB /* ofxEasing.cpp in Sources */,
 				841BF6171ADBDF2B0074BB35 /* pipe.cpp in Sources */,
 				8456A9FB1AB9D988005BD2D3 /* DofPass.cpp in Sources */,
 				8456A9FC1AB9D988005BD2D3 /* EdgePass.cpp in Sources */,
@@ -2039,6 +2140,7 @@
 				84697E411ADEAEE60090CCD8 /* soundManager.cpp in Sources */,
 				8456AA0B1AB9D988005BD2D3 /* ToonPass.cpp in Sources */,
 				8456AAD21AB9DD11005BD2D3 /* ofxUITabBar.cpp in Sources */,
+				84DE61521AF0EA59001D22BB /* ofxEasingBounce.cpp in Sources */,
 				841BF62C1ADBDF2B0074BB35 /* stream_engine.cpp in Sources */,
 				841BF6341ADBDF2B0074BB35 /* v1_decoder.cpp in Sources */,
 				8456AA341AB9D9CA005BD2D3 /* ofxMtlMapping2DSettings.cpp in Sources */,
@@ -2049,7 +2151,9 @@
 				8456AA011AB9D988005BD2D3 /* KaleidoscopePass.cpp in Sources */,
 				841BF6211ADBDF2B0074BB35 /* raw_decoder.cpp in Sources */,
 				841BF6101ADBDF2B0074BB35 /* object.cpp in Sources */,
+				84DE61531AF0EA59001D22BB /* ofxEasingCirc.cpp in Sources */,
 				8456AAD61AB9DD11005BD2D3 /* ofxUIToggleMatrix.cpp in Sources */,
+				84DE615B1AF0EA59001D22BB /* ofxEasingSine.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				84D6A85B1AC2C8170028BA50 /* OscReceivedElements.cpp in Sources */,
 				84771B841ADDBD6800FC5412 /* guiManager.cpp in Sources */,
@@ -2080,6 +2184,7 @@
 				8456AA3A1AB9D9CA005BD2D3 /* ofxMtlMapping2DShape.cpp in Sources */,
 				8456AAB61AB9DD11005BD2D3 /* ofxUIDragableLabelButton.cpp in Sources */,
 				8456AAC31AB9DD11005BD2D3 /* ofxUIMinimalSlider.cpp in Sources */,
+				84DE61511AF0EA59001D22BB /* ofxEasingBack.cpp in Sources */,
 				841BF62A1ADBDF2B0074BB35 /* socket_base.cpp in Sources */,
 				8456AABB1AB9DD11005BD2D3 /* ofxUIImage.cpp in Sources */,
 				8456AA371AB9D9CA005BD2D3 /* ofxMtlMapping2DMask.cpp in Sources */,
@@ -2430,7 +2535,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "myRamdomVideosExample" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "myVjingApolo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
